@@ -46,7 +46,7 @@
             <td><%= image_tag book_comment.user.get_profile_image,size: "100x100" %></td>
             <td><%= book_comment.comment %></td>
             <td><% if book_comment.user == current_user %>
-            <%= link_to "destroy", book_book_comment_path(book_comment.book, book_comment), method: :delete,class: "btn bnt-sm btn-denger" %>
+            <%= link_to "destroy", book_book_comment_path(book_comment.book, book_comment), method: :delete,class: "btn bnt-sm btn-danger" %>
             <%end%>
             </td>
           <%end%>
@@ -56,7 +56,7 @@
 
       <div>
         <%= form_with model: [@book, @book_comment] do |f| %>
-        <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
+        <%= f.text_area :comment, cols: '100' , placeholder: "コメントをここに" %>
         <%= f.submit "送信" %>
         <%end%>
       </div>
