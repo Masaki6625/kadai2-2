@@ -34,6 +34,9 @@
         </td>
         <td>コメント数：<%= book.book_comments.count%></td>
       </tr>
+      <tr>
+        <td><%= current_user.books.where('created_at > ?', Date.today).count %></td>
+      </tr>
     <% end %>
   </tbody>
 </table>
